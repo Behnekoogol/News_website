@@ -12,8 +12,8 @@ class Category(models.Model):
 
 
      class Meta:
-        verbos_name = _('category')
-        verbos_name_plural = _('categories')
+        verbose_name = _('category')
+        verbose_name_plural = _('categories')
 
 
 
@@ -25,7 +25,7 @@ class Post(models.Model):
 
 
 
-    title = models.CharField(verbose_name=_('title'))
+    title = models.CharField(verbose_name=_('title'), max_length=255)
     slug = models.SlugField(verbose_name=_('slug'), allow_unicode = True, null=False, unique_for_date='publish_time')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     lead = models.CharField(verbose_name=_('lead'), max_length=1024, null=True, blank=True)
@@ -44,4 +44,4 @@ class Post(models.Model):
     class Meta:
         verbose_name = _('post')
         verbose_name_plural = _('posts')
-        ordering = ['-publish_date']
+        ordering = ['-publish_time']

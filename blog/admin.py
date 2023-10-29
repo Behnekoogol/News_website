@@ -1,3 +1,10 @@
 from django.contrib import admin
+from . import Category, Post
 
-# Register your models here.
+@admin.site.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('title', 'active')
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'category', 'publish_time', 'status')

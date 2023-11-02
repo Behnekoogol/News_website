@@ -40,55 +40,21 @@
 <p>این چهارمین مکان عالی برای تبلیغات شماست</p>
 </div>
 </div>
-<div class="main">
-<div class="mypost">
-<h3>
-    مطلب شماره یک
-</h3>
-<p>در این مکان مطالب اصلی نوشته میشود که بیشتر مورد پسنده بازدید کنندگان است</p>
-<br>
-            <br>
-            <br>
-            <br>
-<div class="more"> <a href="#"> ادامه مطلب</a></div>
-</div>
-<div class="mypost">
-    <h3>
-     مطلب شماره دو
-    </h3>
-    <p>در این مکان مطالب اصلی نوشته میشود که بیشتر مورد پسنده بازدید کنندگان است</p>
-    <br>
-            <br>
-            <br>
-            <br>
-    <div class="more"> <a href="#"> ادامه مطلب</a></div>
-    </div>
-    <div class="mypost">
-        <h3>
-            مطلب شماره سه
-        </h3>
-        <p> در این مکان مطالب اصلی نوشته میشود که بیشتر مورد پسنده بازدید کنندگان است</p>
-        <br>
-            <br>
-            <br>
-            <br>
-        <div class="more"> <a href="#"> ادامه مطلب</a></div>
+{% for item  in posts %}
+  <div class="main">
+  <div class="mypost">
+  <h3>
+    {{item.title}}
+  </h3>
+  <p>{{item.lead}}</p>
+  <br>
+              <br>
+              <br>
+              <br>
+  <div class="more"> <a href="#"> ادامه مطلب</a></div>
+  </div>
+{% endfor %}
 
-        </div>
-        <div class="mypost">
-            <h3>
-       مطلب شماره چهار
-            </h3>
-            <p>در این مکان مطالب اصلی نوشته میشود که بیشتر مورد پسنده بازدید کنندگان است</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="more"><a href="#"> ادامه مطلب</a>
-            </div>
-            </div>
-        </div>
-    </div>
         <div class="side">
         <div class="sidebox">
             <h3> مطالب فرعی</h3>

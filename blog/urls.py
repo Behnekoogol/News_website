@@ -1,5 +1,6 @@
 from django.urls import path
 from .import views
+
 urlpatterns=[
 path('',views.list_view ),
 path('sport.html',views.sport),
@@ -8,5 +9,5 @@ path('economy.html',views.economy),
 path('social.html',views.social),
 path('art.html',views.art),
 path('cultur.html',views.cultur),
-path('detail/<int:year>/<int:month>/<int:day>/<str:slug>/',views.detail_view)
+path('<int:year>/<int:month>/<int:day>/<str:slug>/',views.detail_view)
  ]

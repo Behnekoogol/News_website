@@ -3,7 +3,7 @@ from .models import Category, Post
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('title', 'active')
+    list_display = ('id','title', 'active')
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):

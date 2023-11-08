@@ -42,6 +42,9 @@
 </div>
 {% for item  in posts %}
   <div class="main">
+    <div>
+      <img src="{{ item.thumbnail.url}}" />
+    </div>
   <div class="mypost">
   <h3>
     {{item.title}}

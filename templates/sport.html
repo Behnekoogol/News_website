@@ -2,12 +2,14 @@
 {% for spor in p4 %}
 <div class="main">
 <div class="mypost">
-<h3>
-  {{ spor.title }}
-</h3>
-<p>{{spor.lead}}</p>
+{% for spor in p4 %}
+  <h3>
+    {{ spor.title }}
+  </h3>
+  <p>{{spor.lead}}</p>
 
-<br>
+  <br>
+{% endfor %}
             <br>
             <br>
             <br>

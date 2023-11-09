@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ category.title }}</h1>
+
+        <ul>
+        {% for item in posts %}
+            <li>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.lead }}</p>
+                <div class="more"> <a href="{% url 'detail' year=item.publish_time|date:'Y' month=item.publish_time|date:'m' day=item.publish_time|date:'d' slug=item.slug %}">ادامه مطلب</a></div>
+
+            </li>
+        {% endfor %}
+        </ul>
+
+
+    
+</body>
+</html>
+

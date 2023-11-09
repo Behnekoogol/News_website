@@ -13,12 +13,11 @@
 <h1> اخبار را بدون سانسور با ما دنبال کنید</h1>
 </div>
 <div class="navbar">
-<a href="political.html" > سیاسی</a>
-<a href="economy.html">اقتصادی</a>
-<a href="sport.html" >ورزشی</a>
-<a href="art.html" >هنری</a>
-<a href="social.html" >اجتماعی</a>
-<a href="cultur.html" >فرهنگی</a>
+  <a href="{% url 'category_list' category_slug='economic' %}">اقتصادی</a>
+  <a href="{% url 'category_list' category_slug='sport' %}" >ورزشی</a>
+  <a href="{% url 'category_list' category_slug='art' %}" >هنری</a>
+  <a href="{% url 'category_list' category_slug='social' %}" >اجتماعی</a>
+  <a href="{% url 'category_list' category_slug='politics' %}" >سیاسی</a>
 <a href="#" class="sabt">ثبت نام</a>
 </div>
 <div class="row">
@@ -43,7 +42,7 @@
 {% for item  in posts %}
   <div class="main">
     <div>
-      <img src="{{ item.thumbnail.url}}" />
+    <img src="{{ item.thumbnail.url}}" />
     </div>
   <div class="mypost">
   <h3>

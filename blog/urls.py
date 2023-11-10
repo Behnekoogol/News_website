@@ -12,6 +12,7 @@ path('social.html',views.social),
 path('art.html',views.art),
 path('cultur.html',views.cultur),
 path('<int:year>/<int:month>/<int:day>/<str:slug>/',views.detail_view),
+
  ]
 
 

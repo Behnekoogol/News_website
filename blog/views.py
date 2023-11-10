@@ -15,7 +15,8 @@ def detail_view(request,year, month, day, slug):
                                     publish_time__month=month, 
                                     publish_time__day=day, slug=slug)
     return render(request, 'detail.html', {'post': post})
-    
+
+
 def political(request):
     p1 = Post.objects.filter(category_id=1)
     return render(request,'political.html',{'p1':p1})

@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    {% csrf_token %}
     <articl>Article:  {{ post.title }}</articl>
     <form method="post">
         <table>

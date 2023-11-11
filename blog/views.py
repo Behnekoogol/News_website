@@ -6,7 +6,7 @@ from .models import Post, Category
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
-
+from django.core.mail import send_mail
 
 def list_view(request):
     posts = Post.objects.filter(status = Post.StatusChoices.PUBLISHED,) 
@@ -45,5 +45,18 @@ class SharePost(View):
         return render(request, 'share.html', {'form': form, 'post': post},)
 
 
-    def post(self):
-        pass
+    def post(self, request, pk):
+        post = get_object_or_404(Post, pk=pk)
+        form = ShareForm(request.POST)
+        if form.is_valid():  
+            send_mail(
+                "sharing a Post".format(post.title),
+                form.cleaned_data.get('comment'),
+                form.cleaned_data.get('email'),
+                [form.cleaned_data.get('to')],
+                fail_silently=False,
+    )
+
+        else:
+            return render(request, 'share.html', {'form': form, 
+                                                  'post': post})

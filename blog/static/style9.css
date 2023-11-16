@@ -1,28 +1,51 @@
-body{
-  
-    direction: rtl;
-    font-family: Tahoma,sans-serif;
-    margin: 0%;
-    background-color:white;
-  
+html {
+  background:linear-gradient(90deg, #483f3f 0%, #c5c5c5 100%);
+  font-family: system-ui;
+  -webkit-font-smoothing: antialiased;
+  padding: 20px 0;
 }
 
-.hedder{
-       background-image:url(image/depositphotos_9334068-stock-photo-ripped-newspapers.jpg);
-       background-attachment:fixed ;
-       background-size: cover;
+header{
+        position: relative;
+
+       background-repeat: no-repeat;
        text-align: center;
        background-position: center bottom;
-       padding: 6%;
-       border: 10px solid rgb(0, 0, 0);
-      
-   
-}
+       border-radius: 30px 30px 0 0;
+       top: -40px;
+       height: 350px;
 
-    .navbar{    
+}
+header img{
+    position: relative;
+    top:20px;
+
+    width: 1536px;
+    height: 350px;
+    transition:  2s ease;
+    border: black solid 10px;
+}
+header:hover img{
+    opacity:25%;
+}
+header h1{
+  text-align: center;
+    position: relative;
+    top: -250px;
+    font-size: 100px;
+    opacity: 0;
+    transition: 2s ease;
+    color: aliceblue;
+}
+header:hover h1{
+    opacity: 100%;
+}
+    .navbar{
+        position: relative;
+        margin-top: -40px;
+        margin-bottom:30px ;
         overflow: hidden;
         background-color: black;
-        
     }
     .navbar a{
         font-size: large;
@@ -34,84 +57,154 @@ body{
         text-align: center;
     }
     .navbar a:hover{
-        background-color: rgb(255, 255, 255);
-        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        color: #000000;
     }
-    .navbar .sabt{
-       
-        float: left;
+    .navy{
+      animation-name: abbas;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition-duration: 1s;
     }
-    .row{
-        display:flex;
-        flex-direction:wrap;
-        flex-wrap:wrap;
-        background-color:white;
-    }
-    .side{
-        background-color: rgb(255, 255, 255);
-        border: 3px double black;
-        border-radius: 30px;
+@keyframes abbas:{
+   from{background-color: #ff2d2d;}
+   to{background-color: #5d3737;}}
 
+
+.navy:hover{
+    transform: rotate(360deg) scale(2)
+
+
+}
+.band {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+
+  @media (min-width: 30em) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 60em) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  // sets up hover state
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+  padding: 6px;
+
+  &:hover {
+    top: -2px;
+    box-shadow: 5px 8px 20px rgba(0,0,0,0.2);
+  }
+
+  article {
+    padding: 20px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+  h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+  }
+
+  p {
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin: 2em 0 0 0;
+  }
+
+  .thumb {
+    padding-bottom: %;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+.thumb img{
+  border-radius: 15px 15px 0 0;
+  transition: 2s ease;
+}
+.thumb:hover img{
+    opacity:25%;
+}
+.thumb:hover p{
+    opacity:25%;
+}
+
+.item-1 {
+  @media (min-width: 60em) {
+    grid-column: 1 / span 2;
+
+
+    h1 {
+      font-size: 24px;
     }
-    .sidebox{
-       
-        color: rgb(6, 32, 24);
-        height: 200px;
-        border: 5px solid rgb(40, 40, 88);
-        margin: 5px 2px;
-        border-radius: 20px;
-        box-shadow: 6px 5px 15px  rgba(0, 0, 0, 1);
-        
-        
-    }
-    .main{
-      -ms-flex: 50%;
-      flex: 50%;
-      padding: 0 10px;
-    }
-    .mypost{
-        background-color: white;
-        height:200px;
-        box-shadow:0px 10px 30px black;
-        border-radius:30px 5px;     
-    }
-    .mypost h3{
-        text-align:center;
-        border:5px solid black;
-        border-radius:30px 0 0 0;
- 
-    }
-    .mypost p{
-        margin-right:30px;
-    }
-    .more a{
-    position:relative;
-    right:90%;
-    text-align:center;
-    font-size:17px;
-    text-decoration:none;
-    border:1px solid black;
-    padding:7px;
-    color:black;
-    }
-    .sidebox h3{
-        text-align:center;
-    }
-    .footer{
-       background-color: black; 
-    padding:50px;
-    text-align:center;
-    font-size:20px;
-    border-radius:80px;
-    color:#f2f2f2;
-    }  
+  }
+}
 
 *, *:before, *:after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
+.item-8 {
+  @media (min-width: 60em) {
+    grid-column: 1 / span 2;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+.item-9 {
+  @media (min-width: 60em) {
+    grid-column: 3 / span 2;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+.item-11 {
+  @media (min-width: 60em) {
+    grid-column: 2 / span 2;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
 
   .burger {
     width: 50px;
@@ -122,7 +215,7 @@ body{
     border-radius: 4px;
     z-index: 10;
     background-color: rgb(0, 0, 0);
-    
+
   }
   .burger span {
     position: relative;
@@ -186,7 +279,7 @@ body{
   .burger:hover {
     cursor: pointer;
   }
-  
+
 
   nav {
     background-color: #2a2a2a;
@@ -406,7 +499,7 @@ body{
   nav ul.sub li a:hover {
     color: #b7ac7f;
   }
-  
+
 
   .overlay {
     position: fixed;

@@ -26,10 +26,11 @@ class Post(models.Model):
 
 
     title = models.CharField(verbose_name=_('title'), max_length=255)
-    thumbnail = models.ImageField(verbose_name=_('thumb'), null=True, upload_to='posts/')
+    thumbnail = models.ImageField(verbose_name=_('thumb'), null=True, upload_to='posts/',)
     slug = models.SlugField(verbose_name=_('slug'), allow_unicode = True, null=False, unique_for_date='publish_time')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-    lead = models.CharField(verbose_name=_('lead'), max_length=1024, null=True, blank=True)
+    lead = models.CharField(verbose_name=_('lead'), max_length=1024, null=True, blank=True,)
+    number_news=models.IntegerField(verbose_name='id_news',max_length=100,null=True,blank=False)
     body = models.TextField(verbose_name=_('body'))
     # custimizing authentication
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=False)

@@ -6,78 +6,508 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>اخبار بدون سانسور</title>
 
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway|Spectral'><link rel="stylesheet" href={% static "style1.css" %}>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway|Spectral'><link rel="stylesheet" href={% static "style9.css" %}>
 </head>
 <body>
-<div class="hedder">
-<h1> اخبار را بدون سانسور با ما دنبال کنید</h1>
-</div>
+
+
+<header>
+    <img src="/media/posts/depositphotos_13732950-stock-photo-background-of-old-vintage-newspapers.jpg">
+  <h1 >اخبار بدون سانسور</h1>
+</header>
 <div class="navbar">
-  <a href="{% url 'category_list' category_slug='economic' %}">اقتصادی</a>
-  <a href="{% url 'category_list' category_slug='sport' %}" >ورزشی</a>
-  <a href="{% url 'category_list' category_slug='art' %}" >هنری</a>
-  <a href="{% url 'category_list' category_slug='social' %}" >اجتماعی</a>
-  <a href="{% url 'category_list' category_slug='politics' %}" >سیاسی</a>
-<a href="#" class="sabt">ثبت نام</a>
+
+<a href="{% url 'category_list' category_slug='politics' %}" class="navy"> سیاسی</a>
+<a href="{% url 'category_list' category_slug='economic' %}" >اقتصادی</a>
+<a href="{% url 'category_list' category_slug='sport' %}"  >ورزشی</a>
+<a href="{% url 'category_list' category_slug='art' %}" class="navy">هنری</a>
+<a href="{% url 'category_list' category_slug='social' %}" >اجتماعی</a>
+
 </div>
-<div class="row">
-<div class="side">
-<div class="sidebox">
-<h3>مکان تبلیغ یک</h3>
-<p>این بهترین ترین یک مکان برای تبلیغات شماست</p>
-</div>
-<div class="sidebox">
-<h3>مکان تبلیغ دو</h3>
- <p>این دومین مکان عالی بر ای تبلیغات شماست</p>
-</div>
-<div class="sidebox">
-<h3> مکان تبلیغ سه</h3>
- <p>این سومین مکان عالی برای تبلیغات شماست</p>
-</div>
-<div class="sidebox">
-<h3> مکان تبلیغ چهار</h3>
-<p>این چهارمین مکان عالی برای تبلیغات شماست</p>
-</div>
-</div>
-{% for item  in posts %}
-  <div class="main">
-    <div>
-    <img src="{{ item.thumbnail.url}}" />
-    </div>
-  <div class="mypost">
-  <h3>
-    {{item.title}}
-  </h3>
-  <p>{{item.lead}}</p>
-  <br>
-              <br>
-              <br>
-              <br>
-  <div class="more"> <a href="{{item.publish_time| date:'Y/m/d'}}/{{item.slug}}"> ادامه مطلب</a></div>
+<div class="band">
+  <div class="item-1">
+         {% for i in posts %}
+       {% if i.number_news == 1 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb" ><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+      <article>
+        <h1>{{ i.title }}</h1>
+          <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+             {% endif %}
+          {% endfor %}
+      </article>
+    </a>
   </div>
-{% endfor %}
+  <div class="item-2">
+         {% for i in posts %}
+       {% if i.number_news == 2 %}
+      <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb" ><img width="300px" height="400px" src="{{ i.thumbnail.url }}"><p>{{ i.title }}</p></div>
+      <article>
+        <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-3">
+       {% for i in posts %}
+       {% if i.number_news == 3 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      <article>
 
-        <div class="side">
-        <div class="sidebox">
-            <h3> مطالب فرعی</h3>
-        </div>
-        <div class="sidebox">
-            <h3> مطالب فرعی</h3>
-        </div>
-        <div class="sidebox">
-            <h3> مطالب فرعی</h3>
-        </div>
-    </div>
-        <div class="footer">
-            <p>@...........</p>
-        </div>
-    </div>
+      </article>
+    </a>
+  </div>
+  <div class="item-4">
+         {% for i in posts %}
+       {% if i.number_news == 4 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
 
+      </article>
+    </a>
+  </div>
+  <div class="item-5">
+       {% for i in posts %}
+       {% if i.number_news == 5 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-6">
+       {% for i in posts %}
+       {% if i.number_news == 6 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-7">
+       {% for i in posts %}
+       {% if i.number_news == 7 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+   <div class="item-8">
+       {% for i in posts %}
+       {% if i.number_news == 9 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+   <div class="item-9">
+       {% for i in posts %}
+       {% if i.number_news == 10 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+ <div class="item-10">
+       {% for i in posts %}
+       {% if i.number_news == 11 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+<div class="item-11">
+       {% for i in posts %}
+       {% if i.number_news == 12 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+<div class="item-12">
+       {% for i in posts %}
+       {% if i.number_news == 13 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+ <div class="item-1">
+         {% for i in posts %}
+       {% if i.number_news == 14 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb" ><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+      <article>
+        <h1>{{ i.title }}</h1>
+          <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+             {% endif %}
+          {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-2">
+         {% for i in posts %}
+       {% if i.number_news == 15%}
+      <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb" ><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+      <article>
+        <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-3">
+       {% for i in posts %}
+       {% if i.number_news == 16%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      <article>
 
+      </article>
+    </a>
+  </div>
+  <div class="item-4">
+         {% for i in posts %}
+       {% if i.number_news == 17%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
 
+      </article>
+    </a>
+  </div>
+  <div class="item-5">
+       {% for i in posts %}
+       {% if i.number_news == 18%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-6">
+       {% for i in posts %}
+       {% if i.number_news == 19%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-7">
+       {% for i in posts %}
+       {% if i.number_news == 20%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+   <div class="item-8">
+       {% for i in posts %}
+       {% if i.number_news == 21%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+   <div class="item-9">
+       {% for i in posts %}
+       {% if i.number_news == 22%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+ <div class="item-10">
+       {% for i in posts %}
+       {% if i.number_news == 23%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+<div class="item-11">
+       {% for i in posts %}
+       {% if i.number_news == 24%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+<div class="item-12">
+       {% for i in posts %}
+       {% if i.number_news == 25%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div> <div class="item-1">
+         {% for i in posts %}
+       {% if i.number_news == 26%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb" ><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+      <article>
+        <h1>{{ i.title }}</h1>
+          <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+             {% endif %}
+          {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-2">
+         {% for i in posts %}
+       {% if i.number_news == 27 %}
+      <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb" ><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+      <article>
+        <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-3">
+       {% for i in posts %}
+       {% if i.number_news == 28 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      <article>
 
+      </article>
+    </a>
+  </div>
+  <div class="item-4">
+         {% for i in posts %}
+       {% if i.number_news == 29%}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
 
-
+      </article>
+    </a>
+  </div>
+  <div class="item-5">
+       {% for i in posts %}
+       {% if i.number_news == 30 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-6">
+       {% for i in posts %}
+       {% if i.number_news == 31 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+  <div class="item-7">
+       {% for i in posts %}
+       {% if i.number_news == 32 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+   <div class="item-8">
+       {% for i in posts %}
+       {% if i.number_news == 33 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+   <div class="item-9">
+       {% for i in posts %}
+       {% if i.number_news == 34 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+ <div class="item-10">
+       {% for i in posts %}
+       {% if i.number_news == 35 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+<div class="item-11">
+       {% for i in posts %}
+       {% if i.number_news == 36 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="620px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+<div class="item-12">
+       {% for i in posts %}
+       {% if i.number_news == 37 %}
+    <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+         <h1>{{ i.title }}</h1>
+           <p>{{ i.lead }}</p>
+        <span>{{ i.author }}</span>
+          {% endif %}
+  {% endfor %}
+      </article>
+    </a>
+  </div>
+</div>
 
       <div class="burger">
         <span></span>

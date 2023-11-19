@@ -9,14 +9,10 @@ from django.views.generic import TemplateView
 from django.core.mail import send_mail
 
 def list_view(request):
-    posts = Post.objects.filter(status = Post.StatusChoices.PUBLISHED,)
-    p1 = Post.objects.filter(category_id=1)
-    p2 = Post.objects.filter(category_id=2)
-    p3 = Post.objects.filter(category_id=3)
-    p4 = Post.objects.filter(category_id=4)
-    p5= Post.objects.filter(category_id=5)
-    p6= Post.objects.filter(category_id=6)
-    return render(request, 'list.html', {'posts':posts,'p1':p1,'p2':p2,'p3':p3,'p4':p4,'p5':p5,'p6':p6})
+    posts = Post.objects.filter(status = Post.StatusChoices.PUBLISHED,) 
+    return render(request, 'list.html', {'posts':posts})
+
+
 def detail_view(request,year, month, day, slug):
     post = get_object_or_404(Post, status=Post.StatusChoices.PUBLISHED, 
                                     publish_time__year=year, 

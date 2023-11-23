@@ -1,4 +1,5 @@
 
+from typing import Any
 from django.shortcuts import redirect, render
 from django.views import View
 from blog.forms import ShareForm
@@ -52,3 +53,15 @@ class SharePost(View):
         else:
             return render(request, 'share.html', {'form': form,
                                                   'post': post})
+        
+
+
+class NewestPostViews(TemplateView):
+    template_name = 'newest_posts.html'
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        newest_posts = Post.objects.filter(status = Post.StatusChoices.PUBLISHED)[:5]
+        context['newest_posts'] = newest_posts
+        return context

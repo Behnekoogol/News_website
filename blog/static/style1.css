@@ -92,6 +92,13 @@ html {
     text-decoration: none;
 
    }
+   .card h1{
+     font-size: 30px;
+     margin-bottom: 30px;
+   }
+   .card p{
+
+   }
 
     article {
       padding: 20px;
@@ -449,8 +456,6 @@ html {
     nav ul.sub li a:hover {
       color: #b7ac7f;
     }
-
-
     .overlay {
       position: fixed;
       top: 0;

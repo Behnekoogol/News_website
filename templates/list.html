@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>اخبار بدون سانسور</title>
 
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway|Spectral'><link rel="stylesheet" href={% static "style9.css" %}>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway|Spectral'><link rel="stylesheet" href={% static "style.css" %}>
 </head>
 <body>
 
@@ -18,24 +18,45 @@
 <div class="navbar">
 
 <a href="{% url 'category_list' category_slug='politics' %}" class="navy"> سیاسی</a>
-<a href="{% url 'category_list' category_slug='economic' %}" >اقتصادی</a>
-<a href="{% url 'category_list' category_slug='sport' %}"  >ورزشی</a>
+<a href="{% url 'category_list' category_slug='economic' %}"class="navy" >اقتصادی</a>
+<a href="{% url 'category_list' category_slug='sport' %}"  class="navy">ورزشی</a>
 <a href="{% url 'category_list' category_slug='art' %}" class="navy">هنری</a>
-<a href="{% url 'category_list' category_slug='social' %}" >اجتماعی</a>
+<a href="{% url 'category_list' category_slug='social' %}" class="navy">اجتماعی</a>
 
 </div>
-<div class="item-12">
+<div class="item">
        {% for i in posts %}
     <a href="{{i.publish_time| date:'Y/m/d'}}/{{i.slug}}" class="card">
-      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"></div>
+      <div class="thumb"><img width="300px" height="400px" src="{{ i.thumbnail.url }}"><h3>ادامه خبر</h3></div>
+
          <h1>{{ i.title }}</h1>
            <p>{{ i.lead }}</p>
         <span>{{ i.author }}</span>
+
   {% endfor %}
       </article>
     </a>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <div class="burger">
         <span></span>
